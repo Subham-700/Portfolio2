@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root { color-scheme: dark; }
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-text-size-adjust: 100%; }
+  body {
+    @apply bg-ink-950 font-sans text-bone antialiased;
+    font-feature-settings: "cv11", "ss01";
+    overflow-x: clip;
+  }
+  ::selection { background: rgba(255, 138, 61, 0.35); color: #fff; }
+  :focus-visible { outline: 2px solid #ff8a3d; outline-offset: 3px; border-radius: 6px; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+}
+
+@layer components {
+  .shell { @apply mx-auto w-full max-w-shell px-4 sm:px-6 lg:px-8; }
+  .eyebrow { @apply font-mono text-[11px] uppercase tracking-[0.22em] text-mute; }
+  .card {
+    @apply rounded-2xl border border-white/[0.07] bg-ink-900/70;
+    box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.04);
+  }
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-[11.5px] text-bone/80;
+  }
+  .text-gradient {
+    background: linear-gradient(100deg, #ffd166 0%, #ff8a3d 55%, #ff6a3d 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+}
+
+/* Fine film-grain + grid backdrop */
+.backdrop-grid {
+  background-image:
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%);
+}
