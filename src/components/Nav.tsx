@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Download, Menu, X } from "lucide-react";
 import clsx from "clsx";
 import { nav, profile, site } from "@/data/profile";
+import { ThemeToggle } from "./ThemeToggle";
 
 function useActiveSection(ids: string[]) {
   const [active, setActive] = useState<string>("");
@@ -47,12 +48,12 @@ export function Nav() {
     <header
       className={clsx(
         "fixed inset-x-0 top-0 z-50 transition-[background,border-color,backdrop-filter] duration-300",
-        scrolled || open ? "border-b border-white/[0.06] bg-ink-950/75 backdrop-blur-xl" : "border-b border-transparent",
+        scrolled || open ? "border-b border-line-subtle bg-ink-950/80 backdrop-blur-xl" : "border-b border-transparent",
       )}
     >
       <nav aria-label="Primary" className="shell flex h-16 items-center justify-between gap-4">
         <a href="#top" className="group flex items-center gap-2.5" aria-label={`${profile.name} — home`}>
-          <span className="grid h-8 w-8 place-items-center rounded-lg border border-white/10 bg-ink-850 font-serif text-lg italic text-signal transition-transform group-hover:-rotate-6">
+          <span className="grid h-8 w-8 place-items-center rounded-lg border border-line/10 bg-ink-850 font-serif text-lg italic text-signal transition-transform group-hover:-rotate-6">
             S
           </span>
           <span className="text-sm font-medium tracking-tight">
@@ -60,7 +61,7 @@ export function Nav() {
           </span>
         </a>
 
-        <ul className="hidden items-center gap-1 rounded-full border border-white/[0.07] bg-ink-900/60 p-1 lg:flex">
+        <ul className="hidden items-center gap-1 rounded-full border border-line-subtle bg-ink-900/60 p-1 lg:flex">
           {nav.map((item) => (
             <li key={item.id} className="relative">
               <a
@@ -68,7 +69,7 @@ export function Nav() {
                 aria-current={active === item.id ? "true" : undefined}
                 className={clsx(
                   "relative z-10 block rounded-full px-3.5 py-1.5 text-[13px] transition-colors",
-                  active === item.id ? "text-ink-950" : "text-mute hover:text-bone",
+                  active === item.id ? "text-ink-950 font-medium" : "text-mute hover:text-bone",
                 )}
               >
                 {item.label}
@@ -84,7 +85,8 @@ export function Nav() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2.5">
+          <ThemeToggle />
           <a
             href={site.resume}
             download
@@ -98,7 +100,7 @@ export function Nav() {
             aria-expanded={open}
             aria-controls="mobile-menu"
             aria-label={open ? "Close menu" : "Open menu"}
-            className="grid h-10 w-10 place-items-center rounded-full border border-white/10 lg:hidden"
+            className="grid h-9 w-9 place-items-center rounded-full border border-line/10 text-bone/80 transition hover:text-bone lg:hidden"
           >
             {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </button>
@@ -113,7 +115,7 @@ export function Nav() {
             animate={{ opacity: 1, height: "calc(100dvh - 4rem)" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="overflow-hidden lg:hidden"
+            className="overflow-hidden bg-ink-950/95 backdrop-blur-2xl lg:hidden"
           >
             <ul className="shell flex flex-col pt-6">
               {nav.map((item, i) => (
@@ -122,7 +124,7 @@ export function Nav() {
                   initial={{ opacity: 0, x: -12 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.05 + i * 0.04 }}
-                  className="border-b border-white/[0.06]"
+                  className="border-b border-line-subtle"
                 >
                   <a
                     href={`#${item.id}`}
@@ -134,7 +136,8 @@ export function Nav() {
                   </a>
                 </motion.li>
               ))}
-              <li className="pt-6">
+              <li className="flex items-center justify-between pt-6">
+                <ThemeToggle showLabel />
                 <a
                   href={site.resume}
                   download

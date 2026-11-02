@@ -29,7 +29,7 @@ export function WashProPreview() {
       </div>
       <div className="grid flex-1 grid-cols-4 gap-1.5 sm:gap-2">
         {stages.map((s, si) => (
-          <div key={s} className="flex min-w-0 flex-col gap-2 rounded-lg border border-white/[0.06] bg-ink-950/60 p-1.5 sm:p-2">
+          <div key={s} className="flex min-w-0 flex-col gap-2 rounded-lg border border-line-subtle bg-ink-950/60 p-1.5 sm:p-2">
             <span className="truncate text-[9px] uppercase tracking-wider text-mute sm:text-[10px]">{s}</span>
             {orders
               .filter((o) => o.stage === si)
@@ -40,7 +40,7 @@ export function WashProPreview() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.15 * si + k * 0.1 }}
-                  className="rounded-md border border-white/[0.08] bg-ink-800 p-1.5 sm:p-2"
+                  className="rounded-md border border-line-subtle bg-ink-800 p-1.5 sm:p-2"
                 >
                   <div className="flex justify-between text-bone/90">
                     <span>{o.id}</span>
@@ -72,9 +72,9 @@ export function WashProPreview() {
 export function ChatPreview() {
   return (
     <div className="flex h-full flex-col p-5 text-[12.5px]">
-      <div className="mb-4 flex items-center gap-3 border-b border-white/[0.06] pb-3">
+      <div className="mb-4 flex items-center gap-3 border-b border-line-subtle pb-3">
         <div className="relative">
-          <span className="grid h-8 w-8 place-items-center rounded-full bg-ink-700 text-xs">AK</span>
+          <span className="grid h-8 w-8 place-items-center rounded-full bg-ink-700 text-xs text-bone">AK</span>
           <motion.span
             animate={{ scale: [1, 1.25, 1] }}
             transition={{ duration: 1.8, ...loop }}
@@ -125,7 +125,7 @@ export function ChatPreview() {
 export function ShortenerPreview() {
   return (
     <div className="flex h-full flex-col justify-center gap-4 p-5 font-mono text-[11.5px]">
-      <div className="flex items-center gap-2 rounded-lg border border-white/[0.08] bg-ink-950/60 px-3 py-2.5">
+      <div className="flex items-center gap-2 rounded-lg border border-line-subtle bg-ink-950/60 px-3 py-2.5">
         <Link2 className="h-3.5 w-3.5 text-signal" />
         <span className="text-bone/90">sho.rt/</span>
         <span className="text-signal-soft">x7Kp2</span>
@@ -137,7 +137,7 @@ export function ShortenerPreview() {
           </div>
           <p className="mt-1 text-[10px] text-mute">cache hit</p>
         </div>
-        <div className="relative h-px w-10 bg-white/15">
+        <div className="relative h-px w-10 bg-line/15">
           <motion.span
             aria-hidden
             animate={{ x: [0, 36] }}
@@ -145,7 +145,7 @@ export function ShortenerPreview() {
             className="absolute -top-[3px] left-0 h-[7px] w-[7px] rounded-full bg-signal shadow-[0_0_12px_#ff8a3d]"
           />
         </div>
-        <div className="rounded-lg border border-white/[0.08] bg-ink-800 p-3">
+        <div className="rounded-lg border border-line-subtle bg-ink-800 p-3">
           <div className="flex items-center gap-1.5 text-bone/80">
             <Database className="h-3.5 w-3.5" /> MongoDB
           </div>

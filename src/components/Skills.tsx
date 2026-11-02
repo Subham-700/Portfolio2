@@ -34,7 +34,7 @@ export function Skills() {
   const [prodOnly, setProdOnly] = useState(false);
 
   return (
-    <section id="skills" aria-labelledby="skills-title" className="relative border-t border-white/[0.06] py-24 sm:py-32">
+    <section id="skills" aria-labelledby="skills-title" className="relative border-t border-line-subtle py-24 sm:py-32">
       <div className="shell">
         <SectionHeader
           id="skills"
@@ -51,9 +51,9 @@ export function Skills() {
         <Reveal className="mb-6 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-2 text-xs text-mute">
             <span className="h-2 w-2 rounded-full bg-signal" /> Used in production
-            <span className="ml-3 h-2 w-2 rounded-full border border-white/25" /> Projects &amp; training
+            <span className="ml-3 h-2 w-2 rounded-full border border-line/25" /> Projects &amp; training
           </div>
-          <div role="group" aria-label="Filter skills" className="flex rounded-full border border-white/10 p-1 text-xs">
+          <div role="group" aria-label="Filter skills" className="flex rounded-full border border-line/10 p-1 text-xs">
             {[
               { v: false, l: "All skills" },
               { v: true, l: "Production only" },
@@ -65,7 +65,7 @@ export function Skills() {
                 onClick={() => setProdOnly(o.v)}
                 className={clsx(
                   "relative rounded-full px-3.5 py-1.5 transition-colors",
-                  prodOnly === o.v ? "text-ink-950" : "text-mute hover:text-bone",
+                  prodOnly === o.v ? "text-ink-950 font-medium" : "text-mute hover:text-bone",
                 )}
               >
                 {prodOnly === o.v && (
@@ -89,7 +89,7 @@ export function Skills() {
                       <h3 className="text-lg font-medium">{g.title}</h3>
                       <p className="mt-1 text-sm text-mute">{g.caption}</p>
                     </div>
-                    <span className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-ink-850 text-bone/70 transition group-hover:text-signal">
+                    <span className="grid h-10 w-10 place-items-center rounded-xl border border-line/10 bg-ink-850 text-bone/70 transition group-hover:text-signal">
                       <Icon className="h-[18px] w-[18px]" />
                     </span>
                   </div>

@@ -8,7 +8,7 @@ export function SectionHeader({ index, eyebrow, title, lede, id }: Props) {
       <div>
         <p className="eyebrow flex items-center gap-3">
           <span className="text-signal">{index}</span>
-          <span className="h-px w-8 bg-white/15" aria-hidden />
+          <span className="h-px w-8 bg-line/15" aria-hidden />
           {eyebrow}
         </p>
         <h2 id={`${id}-title`} className="mt-4 font-serif text-[2.6rem] leading-[1.02] tracking-[-0.01em] text-bone sm:text-6xl">

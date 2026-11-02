@@ -3,10 +3,33 @@
 @tailwind utilities;
 
 @layer base {
-  :root { color-scheme: dark; }
+  :root {
+    color-scheme: light;
+    --ink-950: 250 250 248;
+    --ink-900: 255 255 255;
+    --ink-850: 243 242 238;
+    --ink-800: 236 235 230;
+    --ink-700: 222 220 213;
+    --bone: 18 18 20;
+    --mute: 104 103 110;
+    --line: 0 0 0;
+  }
+
+  html.dark {
+    color-scheme: dark;
+    --ink-950: 9 9 10;
+    --ink-900: 14 14 16;
+    --ink-850: 19 19 22;
+    --ink-800: 24 24 28;
+    --ink-700: 35 35 41;
+    --bone: 236 235 230;
+    --mute: 141 140 147;
+    --line: 255 255 255;
+  }
+
   html { scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-text-size-adjust: 100%; }
   body {
-    @apply bg-ink-950 font-sans text-bone antialiased;
+    @apply bg-ink-950 font-sans text-bone antialiased transition-colors duration-200;
     font-feature-settings: "cv11", "ss01";
     overflow-x: clip;
   }
@@ -21,13 +44,20 @@
   .shell { @apply mx-auto w-full max-w-shell px-4 sm:px-6 lg:px-8; }
   .eyebrow { @apply font-mono text-[11px] uppercase tracking-[0.22em] text-mute; }
   .card {
-    @apply rounded-2xl border border-white/[0.07] bg-ink-900/70;
-    box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.04);
+    @apply rounded-2xl border border-line-subtle bg-ink-900/80 transition-colors duration-200;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+  }
+  html.dark .card {
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.04);
   }
   .chip {
-    @apply inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-[11.5px] text-bone/80;
+    @apply inline-flex items-center gap-1.5 rounded-full border border-line/10 bg-line/[0.04] px-2.5 py-1 font-mono text-[11.5px] text-bone/85 transition-colors duration-200;
   }
   .text-gradient {
+    background: linear-gradient(100deg, #ea580c 0%, #ff8a3d 55%, #f97316 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  html.dark .text-gradient {
     background: linear-gradient(100deg, #ffd166 0%, #ff8a3d 55%, #ff6a3d 100%);
     -webkit-background-clip: text; background-clip: text; color: transparent;
   }
@@ -36,8 +66,8 @@
 /* Fine film-grain + grid backdrop */
 .backdrop-grid {
   background-image:
-    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+    linear-gradient(rgba(var(--line) / 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--line) / 0.035) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, #000 30%, transparent 75%);
 }

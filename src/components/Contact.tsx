@@ -26,7 +26,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" aria-labelledby="contact-title" className="relative overflow-hidden border-t border-white/[0.06] py-24 sm:py-36">
+    <section id="contact" aria-labelledby="contact-title" className="relative overflow-hidden border-t border-line-subtle py-24 sm:py-36">
       <div
         aria-hidden
         className="pointer-events-none absolute -bottom-64 left-1/2 h-[560px] w-[1000px] -translate-x-1/2 rounded-full opacity-[0.16] blur-3xl"
@@ -36,7 +36,7 @@ export function Contact() {
         <Reveal>
           <p className="eyebrow flex items-center gap-3">
             <span className="text-signal">06</span>
-            <span className="h-px w-8 bg-white/15" aria-hidden />
+            <span className="h-px w-8 bg-line/15" aria-hidden />
             Contact
           </p>
           <h2 id="contact-title" className="mt-5 max-w-4xl font-serif text-[3rem] leading-[0.98] tracking-[-0.02em] sm:text-7xl lg:text-[6rem]">
@@ -59,7 +59,7 @@ export function Contact() {
           <button
             type="button"
             onClick={copy}
-            className="inline-flex items-center justify-center gap-2.5 rounded-full border border-white/15 px-6 py-4 font-mono text-[13px] text-bone/85 transition hover:border-white/30"
+            className="inline-flex items-center justify-center gap-2.5 rounded-full border border-line/15 px-6 py-4 font-mono text-[13px] text-bone/85 transition hover:border-line/30"
             aria-label={`Copy email address ${profile.email}`}
           >
             <span className="truncate">{profile.email}</span>
@@ -81,7 +81,7 @@ export function Contact() {
         </Reveal>
 
         <Reveal delay={0.15}>
-          <ul className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.07] sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-line-subtle bg-line-subtle sm:grid-cols-2 lg:grid-cols-4">
             {links.map(({ href, label, handle, Icon }) => (
               <li key={label} className="bg-ink-950">
                 <a

@@ -38,7 +38,7 @@ function CountUp({ value }: { value: string }) {
 
 export function Achievements() {
   return (
-    <section id="achievements" aria-labelledby="achievements-title" className="relative border-t border-white/[0.06] py-24 sm:py-32">
+    <section id="achievements" aria-labelledby="achievements-title" className="relative border-t border-line-subtle py-24 sm:py-32">
       <div className="shell">
         <SectionHeader
           id="achievements"
@@ -69,7 +69,7 @@ export function Achievements() {
         <div className="mt-4 grid gap-4 lg:grid-cols-2">
           <Reveal>
             <div className="card flex h-full items-start gap-4 p-6">
-              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-white/10 bg-ink-850">
+              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-line/10 bg-ink-850">
                 <GraduationCap className="h-[18px] w-[18px] text-signal" />
               </span>
               <div>
@@ -83,7 +83,7 @@ export function Achievements() {
           </Reveal>
           <Reveal delay={0.07}>
             <div className="card flex h-full items-start gap-4 p-6">
-              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-white/10 bg-ink-850">
+              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-line/10 bg-ink-850">
                 <Award className="h-[18px] w-[18px] text-signal" />
               </span>
               <div>
@@ -99,7 +99,7 @@ export function Achievements() {
         {certifications.length > 0 && (
           <Reveal className="mt-10">
             <h3 className="eyebrow mb-4">Certifications</h3>
-            <ul className="divide-y divide-white/[0.06] border-y border-white/[0.06]">
+            <ul className="divide-y divide-line-subtle border-y border-line-subtle">
               {certifications.map((c) => (
                 <li key={c.title} className="flex items-center justify-between gap-4 py-4">
                   <div>

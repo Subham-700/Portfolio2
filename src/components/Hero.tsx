@@ -41,7 +41,7 @@ export function Hero() {
           </motion.div>
 
           <motion.p variants={item} className="mt-8 font-mono text-sm text-mute">
-            {profile.name} <span className="text-white/20">/</span> {profile.role}
+            {profile.name} <span className="text-line/20">/</span> {profile.role}
           </motion.p>
 
           <motion.h1
@@ -61,7 +61,7 @@ export function Hero() {
           <motion.div variants={item} className="mt-10 flex flex-wrap items-center gap-3">
             <a
               href="#projects"
-              className="group inline-flex items-center gap-2 rounded-full bg-bone px-6 py-3.5 text-sm font-medium text-ink-950 transition hover:bg-white"
+              className="group inline-flex items-center gap-2 rounded-full bg-bone px-6 py-3.5 text-sm font-medium text-ink-950 transition hover:bg-bone/90"
             >
               View projects
               <ArrowDownRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
@@ -69,7 +69,7 @@ export function Hero() {
             <a
               href={site.resume}
               download
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3.5 text-sm font-medium transition hover:border-signal/60 hover:text-signal-soft"
+              className="inline-flex items-center gap-2 rounded-full border border-line/15 px-6 py-3.5 text-sm font-medium transition hover:border-signal/60 hover:text-signal"
             >
               <Download className="h-4 w-4" /> Download resume
             </a>
@@ -87,7 +87,7 @@ export function Hero() {
                   target={href.startsWith("http") ? "_blank" : undefined}
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="grid h-11 w-11 place-items-center rounded-full border border-white/10 text-mute transition hover:-translate-y-0.5 hover:border-white/25 hover:text-bone"
+                  className="grid h-11 w-11 place-items-center rounded-full border border-line/10 text-mute transition hover:-translate-y-0.5 hover:border-line/25 hover:text-bone"
                 >
                   <Icon className="h-[18px] w-[18px]" />
                 </a>
@@ -164,20 +164,20 @@ function ApiCard() {
         style={{ background: "linear-gradient(140deg, rgba(255,138,61,.45), rgba(255,255,255,.04) 40%, rgba(255,255,255,.02) 70%, rgba(255,209,102,.25))" }}
       />
       <figure
-        className="relative overflow-hidden rounded-[21px] bg-ink-900 font-mono text-[12.5px] leading-[1.75] sm:text-[13px]"
+        className="relative overflow-hidden rounded-[21px] bg-[#0c0c0e] text-[#ecebe6] font-mono text-[12.5px] leading-[1.75] shadow-2xl shadow-black/10 sm:text-[13px] dark:shadow-none"
         aria-label="Profile summary formatted as an API response"
       >
-        <div className="flex items-center justify-between border-b border-white/[0.06] px-4 py-3">
+        <div className="flex items-center justify-between border-b border-white/[0.08] px-4 py-3">
           <div className="flex gap-1.5" aria-hidden>
             <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
             <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
             <span className="h-2.5 w-2.5 rounded-full bg-white/10" />
           </div>
-          <span className="text-[11px] text-mute">profile.json</span>
+          <span className="text-[11px] text-[#8d8c93]">profile.json</span>
         </div>
 
         <div className="px-5 pb-6 pt-5">
-          <p className="text-bone/90">
+          <p className="text-[#ecebe6]">
             <span className="text-signal">$ </span>
             {request.slice(0, typed)}
             {!done && <span className="ml-0.5 inline-block h-4 w-2 translate-y-[3px] animate-blink bg-signal" />}
@@ -187,9 +187,9 @@ function ApiCard() {
             initial={{ opacity: 0 }}
             animate={done ? { opacity: 1 } : {}}
             transition={{ duration: 0.3 }}
-            className="mt-1 text-[11.5px] text-emerald-400/80"
+            className="mt-1 text-[11.5px] text-emerald-400/90"
           >
-            200 OK <span className="text-mute">· application/json</span>
+            200 OK <span className="text-[#8d8c93]">· application/json</span>
           </motion.p>
 
           <motion.pre
@@ -223,14 +223,14 @@ function ApiCard() {
 function ClientStrip() {
   const items = ["Tata Play Binge", "SBS CTV", "Accedo Technologies", "AccedoAssemble", "Magnaquest integration"];
   return (
-    <div className="relative border-y border-white/[0.06] bg-ink-900/40">
+    <div className="relative border-y border-line-subtle bg-ink-900/40">
       <div className="shell flex flex-col gap-3 py-5 sm:flex-row sm:items-center sm:gap-8">
         <p className="eyebrow shrink-0">Production work on</p>
         <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
           {items.map((c, i) => (
             <li key={c} className="flex items-center gap-6 font-serif text-xl italic text-bone/60">
               {c}
-              {i < items.length - 1 && <span aria-hidden className="h-1 w-1 rounded-full bg-white/20" />}
+              {i < items.length - 1 && <span aria-hidden className="h-1 w-1 rounded-full bg-line/20" />}
             </li>
           ))}
         </ul>

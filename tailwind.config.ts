@@ -1,19 +1,25 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: ["./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
         ink: {
-          950: "#09090a",
-          900: "#0e0e10",
-          850: "#131316",
-          800: "#18181c",
-          700: "#232329",
+          950: "rgb(var(--ink-950) / <alpha-value>)",
+          900: "rgb(var(--ink-900) / <alpha-value>)",
+          850: "rgb(var(--ink-850) / <alpha-value>)",
+          800: "rgb(var(--ink-800) / <alpha-value>)",
+          700: "rgb(var(--ink-700) / <alpha-value>)",
         },
-        bone: "#ecebe6",
-        mute: "#8d8c93",
+        bone: "rgb(var(--bone) / <alpha-value>)",
+        mute: "rgb(var(--mute) / <alpha-value>)",
+        line: {
+          DEFAULT: "rgb(var(--line) / <alpha-value>)",
+          subtle: "rgb(var(--line) / 0.08)",
+          strong: "rgb(var(--line) / 0.16)",
+        },
         signal: {
           DEFAULT: "#ff8a3d",
           soft: "#ffb37a",

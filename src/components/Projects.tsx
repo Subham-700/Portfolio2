@@ -58,10 +58,10 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
               style={{ background: "radial-gradient(closest-side, rgba(255,138,61,.35), transparent)" }}
             />
             <div className="card aspect-square overflow-hidden sm:aspect-[4/3] bg-gradient-to-b from-ink-850 to-ink-900">
-              <div className="flex items-center gap-1.5 border-b border-white/[0.06] px-4 py-2.5" aria-hidden>
-                <span className="h-2 w-2 rounded-full bg-white/10" />
-                <span className="h-2 w-2 rounded-full bg-white/10" />
-                <span className="h-2 w-2 rounded-full bg-white/10" />
+              <div className="flex items-center gap-1.5 border-b border-line-subtle px-4 py-2.5" aria-hidden>
+                <span className="h-2 w-2 rounded-full bg-line/10" />
+                <span className="h-2 w-2 rounded-full bg-line/10" />
+                <span className="h-2 w-2 rounded-full bg-line/10" />
                 <span className="ml-3 font-mono text-[10px] text-mute">{project.github.replace("https://", "")}</span>
               </div>
               <div className="h-[calc(100%-2.25rem)]">
@@ -78,7 +78,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
       <Reveal delay={0.1}>
         <div className="flex items-center gap-3 font-mono text-xs text-mute">
           <span className="text-signal">0{index + 1}</span>
-          <span className="h-px w-6 bg-white/15" aria-hidden />
+          <span className="h-px w-6 bg-line/15" aria-hidden />
           <span>{project.period}</span>
         </div>
         <h3 id={`p-${project.slug}`} className="mt-4 font-serif text-4xl leading-tight sm:text-5xl">
@@ -123,7 +123,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-sm transition hover:border-white/30 hover:bg-white/[0.04]"
+            className="group inline-flex items-center gap-2 rounded-full border border-line/15 px-5 py-2.5 text-sm transition hover:border-line/30 hover:bg-line/[0.04]"
           >
             <GithubIcon className="h-4 w-4" /> View code
             <ArrowUpRight className="h-3.5 w-3.5 text-mute transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-bone" />
@@ -133,7 +133,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
               href={project.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-bone px-5 py-2.5 text-sm font-medium text-ink-950 transition hover:bg-white"
+              className="inline-flex items-center gap-2 rounded-full bg-bone px-5 py-2.5 text-sm font-medium text-ink-950 transition hover:bg-bone/90"
             >
               <ExternalLink className="h-4 w-4" /> Live demo
             </a>
@@ -146,7 +146,7 @@ function ProjectRow({ project, index }: { project: Project; index: number }) {
 
 export function Projects() {
   return (
-    <section id="projects" aria-labelledby="projects-title" className="relative overflow-x-clip border-t border-white/[0.06] py-24 sm:py-32">
+    <section id="projects" aria-labelledby="projects-title" className="relative overflow-x-clip border-t border-line-subtle py-24 sm:py-32">
       <div className="shell">
         <SectionHeader
           id="projects"

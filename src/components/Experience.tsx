@@ -14,7 +14,7 @@ export function Emphasise({ text }: { text: string }) {
     <>
       {parts.map((p, i) =>
         /^~?\d+\+?%?(ms)?$/.test(p) ? (
-          <strong key={i} className="font-medium text-signal-soft">
+          <strong key={i} className="font-medium text-signal dark:text-signal-soft">
             {p}
           </strong>
         ) : (
@@ -31,7 +31,7 @@ export function ExperienceSection() {
   const scaleY = useSpring(scrollYProgress, { stiffness: 120, damping: 30 });
 
   return (
-    <section id="experience" aria-labelledby="experience-title" className="relative border-t border-white/[0.06] py-24 sm:py-32">
+    <section id="experience" aria-labelledby="experience-title" className="relative border-t border-line-subtle py-24 sm:py-32">
       <div className="shell">
         <SectionHeader
           id="experience"
@@ -47,7 +47,7 @@ export function ExperienceSection() {
 
         <div ref={ref} className="relative">
           {/* timeline rail */}
-          <div aria-hidden className="absolute bottom-2 left-[11px] top-2 w-px bg-white/[0.08] md:left-[calc(15rem+11px)]" />
+          <div aria-hidden className="absolute bottom-2 left-[11px] top-2 w-px bg-line/10 md:left-[calc(15rem+11px)]" />
           <motion.div
             aria-hidden
             style={{ scaleY }}
@@ -80,7 +80,7 @@ export function ExperienceSection() {
                     <div className="mt-4 flex flex-wrap items-center gap-2">
                       <span className="eyebrow mr-1">Clients</span>
                       {job.clients.map((c) => (
-                        <span key={c} className="rounded-md border border-white/10 bg-white/[0.03] px-2 py-0.5 text-xs text-bone/85">
+                        <span key={c} className="rounded-md border border-line/10 bg-line/[0.04] px-2 py-0.5 text-xs text-bone/85">
                           {c}
                         </span>
                       ))}
@@ -114,7 +114,7 @@ export function ExperienceSection() {
                 </p>
                 <p className="mt-2 text-xs text-mute">Education</p>
               </Reveal>
-              <span aria-hidden className="absolute left-0 top-0.5 grid h-6 w-6 place-items-center rounded-full border border-white/20 bg-ink-950 md:left-[15rem]">
+              <span aria-hidden className="absolute left-0 top-0.5 grid h-6 w-6 place-items-center rounded-full border border-line/20 bg-ink-950 md:left-[15rem]">
                 <GraduationCap className="h-3 w-3 text-bone/70" />
               </span>
               <Reveal delay={0.08} className="md:pl-12">

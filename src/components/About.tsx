@@ -33,7 +33,7 @@ export function About() {
             <Reveal>
               <h3 className="eyebrow mb-5">What I bring to a team</h3>
             </Reveal>
-            <ol className="divide-y divide-white/[0.06] border-y border-white/[0.06]">
+            <ol className="divide-y divide-line-subtle border-y border-line-subtle">
               {about.brings.map((b, i) => (
                 <Reveal key={b.title} delay={i * 0.06}>
                   <li className="group grid grid-cols-[2.5rem_1fr] gap-2 py-5">
